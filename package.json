@@ -1,0 +1,20 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chrometest": "npm run test -- --browser chrome",
+    "recordDashboardTest": "npm run test -- --record --key afa2eb09-1d5b-4f33-a0f1-0c9beba280da --reporter mocha",
+    "TestFrameworkTest": "npm run test -- --spec \"cypress/tests/examples/TestFramework.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "cypress-iframe": "^1.0.1",
+    "eslint": "^8.56.0"
+  }
+}
