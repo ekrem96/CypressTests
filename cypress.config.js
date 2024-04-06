@@ -17,7 +17,7 @@ module.exports = defineConfig({
 
   reporter: 'junit',
   reporterOptions: {
-    mochaFile: 'results/my-test-output-[hash].xml',
+    mochaFile: 'cypress/results/my-test-output-[hash].xml',
     toConsole: true,
   },
 
