@@ -1,6 +1,17 @@
 /* eslint-disable */
 
 const { defineConfig } = require("cypress");
+const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
+const { preprocessor } = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+async function setupNodeEvents(on, config){
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on("file:preprocessor", preprocessor(config));
+
+  return config;
+}
+
 
 module.exports = defineConfig({
 
@@ -15,13 +26,12 @@ module.exports = defineConfig({
   env: {
     url: "https://rahulshettyacademy.com"
   },
+
   
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-    specPattern: 'cypress/tests/examples/*.js',
+    specPattern: 'cypress/tests/examples/BDD/*.feature',
     testIsolation: false,
-    defaultCommandTimeout: 6000
+    defaultCommandTimeout: 6000,
+    setupNodeEvents,
   },
 });

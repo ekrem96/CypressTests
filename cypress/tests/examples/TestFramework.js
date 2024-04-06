@@ -29,7 +29,6 @@ describe('Framework test',function(){
 		});
 
 		storePage.getCheckoutBtn().click();
-		//TODO: compare prices with total
 		let sum = 0;
 		cy.get('tr td:nth-child(4) strong').each((element)=>{
 			const amount = element.text();
